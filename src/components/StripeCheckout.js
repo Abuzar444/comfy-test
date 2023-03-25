@@ -8,7 +8,7 @@ import { useUserContext } from '../context/user_context';
 import { formatPrice } from '../utils/helpers';
 import { useNavigate } from 'react-router-dom';
 
-const promise = loadStripe('pk_test_51MjygHLX1AGuIT55bFzjrZQu4QucC2ooWZSoH1rrrfG7RYpaD0TxpyDgtqDpULjr3MRppZiS4JRZSzHAE32rfV3500sjfe42l6');
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
   const cardStyle = {
@@ -72,7 +72,6 @@ const CheckoutForm = () => {
     });
     if (payload.error) {
       setError(`payment failed ${payload.error.message}`);
-      setProcessing(false)
     } else {
       setError(null);
       setProcessing(false);
