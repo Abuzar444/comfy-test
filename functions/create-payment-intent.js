@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const stripe = require('stripe')('sk_test_51MjygHLX1AGuIT55yDhjtfwqlY4V3jKmwVhSFHk9q2cLDUDYfGGJBN2TdbTc9VyArI5IBDXFf5bkWpPMgCmANurp00PExQ18YN');
+const stripe = require('stripe').Stripe('sk_test_51MjygHLX1AGuIT55yDhjtfwqlY4V3jKmwVhSFHk9q2cLDUDYfGGJBN2TdbTc9VyArI5IBDXFf5bkWpPMgCmANurp00PExQ18YN');
 
 exports.handler = async function (event, context) {
   if (event.body) {
